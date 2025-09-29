@@ -1,0 +1,112 @@
+import { useParams, Link } from "react-router-dom";
+import { projects } from "../data/projects";
+
+export default function ProjectDetail() {
+  const { id } = useParams();
+  const project = projects.find((p) => p.id === id);
+
+  if (!project) {
+    return (
+      <div className="py-10">
+        <p>Projet introuvable.</p>
+        <Link to="/" className="underline">← Retour</Link>
+      </div>
+    );
+  }
+
+  return (
+    <article className="space-y-6">
+      <header className="space-y-2">
+        <Link
+          to="/"
+          className="inline-flex items-center gap-2 rounded-full border border-gray-200 px-3 py-1 text-sm hover:bg-gray-50"
+        >
+          ← Retour
+        </Link>
+        <h1 className="text-3xl font-semibold">{project.title}</h1>
+        <div className="text-gray-500 flex items-center gap-2">
+          <span>{project.year}</span>
+          <span>•</span>
+          <span>{project.category}</span>
+        </div>
+      </header>
+
+      <section className="space-y-4">
+        {project.type === "screenshot" && (
+          <img
+            src={project.image}
+            alt={project.title}
+            className="w-full rounded-lg shadow"
+            loading="lazy"
+          />
+        )}
+
+        {project.type === "gallery" && (
+          <div className="grid gap-4 sm:grid-cols-2">
+            {(project.images || []).map((img) => (
+              <figure key={img.src} className="space-y-2">
+                <img
+                  src={img.src}
+                  alt={img.alt || ""}
+                  className="w-full rounded-lg shadow"
+                  loading="lazy"
+                />
+                {img.alt && (
+                  <figcaption className="text-sm text-gray-500">
+                    {img.alt}
+                  </figcaption>
+                )}
+              </figure>
+            ))}
+          </div>
+        )}
+      </section>
+
+      <section className="space-y-3">
+        {Array.isArray(project.notes) ? (
+          <ul className="list-disc pl-6 space-y-1">
+            {project.notes.map((n, i) => <li key={i}>{n}</li>)}
+          </ul>
+        ) : project.notes ? (
+          <p>{project.notes}</p>
+        ) : null}
+
+        <div className="flex flex-wrap gap-2">
+          {(project.techStack || []).map((t) => (
+            <span
+              key={t}
+              className="rounded-full border border-gray-200 px-2 py-0.5 text-xs"
+            >
+              {t}
+            </span>
+          ))}
+        </div>
+
+        {(project.links?.code || project.links?.demo) && (
+          <div className="flex gap-4 pt-2">
+            {project.links?.code && (
+              <a
+                className="underline"
+                href={project.links.code}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Voir le code
+              </a>
+            )}
+            {project.links?.demo && (
+              <a
+                className="underline"
+                href={project.links.demo}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Demo live
+              </a>
+            )}
+          </div>
+        )}
+      </section>
+    </article>
+  );
+}
