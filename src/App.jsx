@@ -1,4 +1,5 @@
 import { Link, NavLink, Outlet } from "react-router-dom";
+import logo from "./assets/logo.svg";
 
 export default function App() {
   return (
@@ -7,8 +8,11 @@ export default function App() {
       <header className="sticky top-0 z-20 bg-white/80 backdrop-blur border-b border-gray-200">
         <div className="mx-auto max-w-6xl px-4 h-16 flex items-center justify-between">
           <Link to="/" className="font-semibold tracking-tight">
-            Victor Wojciechowski — portfolio
+            <img src={logo} class="max-h-12"></img>
           </Link>
+           <span className="font-semibold tracking-tight">
+              Victor Wojciechowski
+            </span>
           <nav className="flex gap-3 text-sm">
             <NavLink
               to="/about"

@@ -4,6 +4,7 @@ import lego from '../assets/macbook_lego_resized.png';
 import wordle from '../assets/wordle_iphone_resized.png';
 import aeroDark from '../assets/dark_Aero.png';
 import aeroLight from '../assets/light_Aero.png';
+import aeroIpad from '../assets/Aero_Ipad.png'
 
 
 export const projects = [
@@ -80,10 +81,10 @@ export const projects = [
     type: "gallery",
     cover: aeroDark,
     images: [
-      { src: aeroDark, alt: "Home page" },
-      { src: aeroLight, alt: "Key feature: aero management" },
-      { src: "/assets/breitling/profile.png", alt: "Profil" }
+      { src: aeroDark, alt: "Page d’accueil présentant la plateforme Aero2 et son concept : une aide innovante pour optimiser l’aérodynamisme et la dépense énergétique des cyclistes." },
+      { src: aeroLight, alt: "Interface centrale permettant d’analyser l’impact réel d’un équipement sur la performance : watts économisés, compatibilité et confort." },
+      { src: aeroIpad, alt: "Espace utilisateur avec modélisation 3D personnalisée, regroupant mensurations, vélo et recommandations adaptées pour un suivi précis." }
     ],
-    techStack: ["Figma", "Design System", "UX Research"],
+    techStack: ["Figma", "Wireframes", "UX Research"],
   },
 ];
