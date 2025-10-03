@@ -50,6 +50,10 @@ export const projects = [
     type: "screenshot",
     image: wordle,
     techStack: ["JavaScript", "HTML5", "CSS3", "Vite"],
+    notes: [
+      "Jeu de réflexion basé sur l'utilisation de l'API de wordle.",
+      "Projet développé en cours de programmation web.",
+    ],
     links: {
       code: "https://github.com/ViElChompo/wwwordle.git",
       demo: "https://wwwordlevw.netlify.app/",
@@ -64,9 +68,12 @@ export const projects = [
     image: breitling,
     techStack: ["Laravel", "Vue.js", "Inertia.js", "Vite", "TailwindCSS"],
     notes: [
-      "Participation au backend de la PWA Breitling Nova League (quiz, scoring, suivi).",
+      "J'ai pu créer le backend de la PWA Breitling Nova League (quiz, scoring, suivi).",
       "Architecture API, gestion des données utilisateurs, mécaniques de jeu.",
-      "Repo privé (accord avec la direction).",
+      "Repo privé (accord avec la direction de la HEIG-VD).",
+      "Accès à la plateforme avec: ",
+      "Login : isabelle.petit@example.com",
+      "Password : password123",
     ],
     links: {
       code: "https://github.com/ProjArtBAMAgency/ProjArtBamAgency.git",
