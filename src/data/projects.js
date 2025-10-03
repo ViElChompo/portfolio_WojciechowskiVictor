@@ -5,7 +5,7 @@ import wordle from '../assets/wordle_iphone_resized.png';
 import aeroDark from '../assets/dark_Aero.png';
 import aeroLight from '../assets/light_Aero.png';
 import aeroIpad from '../assets/Aero_Ipad.png'
-
+import aeroLastPage from '../assets/aero.png'
 
 export const projects = [
   {
@@ -90,7 +90,8 @@ export const projects = [
     images: [
       { src: aeroDark, alt: "Page d’accueil présentant la plateforme Aero2 et son concept : une aide innovante pour optimiser l’aérodynamisme et la dépense énergétique des cyclistes." },
       { src: aeroLight, alt: "Interface centrale permettant d’analyser l’impact réel d’un équipement sur la performance : watts économisés, compatibilité et confort." },
-      { src: aeroIpad, alt: "Espace utilisateur avec modélisation 3D personnalisée, regroupant mensurations, vélo et recommandations adaptées pour un suivi précis." }
+      { src: aeroIpad, alt: "Espace utilisateur avec modélisation 3D personnalisée, regroupant mensurations, vélo et recommandations adaptées pour un suivi précis." },
+      {src : aeroLastPage, alt: "Système de recommandations personnalisées : en fonction des mensurations et du vélo de l’utilisateur, Aero2 propose les pièces les plus adaptées pour optimiser l’aérodynamisme, le confort et l’économie d’énergie."}
     ],
     techStack: ["Figma", "Wireframes", "UX Research"],
   },
