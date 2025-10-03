@@ -3,6 +3,8 @@ import portrait from "../assets/golf.jpg";
 import malaga from "../assets/malaga.jpg";
 import legend from "../assets/victor_legend.jpg";
 import velodrome from "../assets/velodrome.mp4";
+import imacom from "../assets/imacom.png";
+import im from '../assets/im.svg';
 
 /* ---------- Composants réutilisables ---------- */
 function Section({ intro, children }) {
@@ -169,23 +171,23 @@ const experiencesCards = [
 const diplomasCards = [
   {
     type: "image",
-    src: "/dipl-heig.png",
+    src: im,
     alt: "HEIG-VD",
     title: "HEIG-VD",
-    metaRight: "Bachelor",
+    metaRight: "Bachelor en cours",
     footerLeft: "Ingénierie des médias",
-    footerRight: "2022–2025",
+    footerRight: "2023–2026",
     span: "md:col-span-2",
     mediaHeight: "h-[300px]",
     hoverColor: "#EEF2FF",
   },
   {
     type: "image",
-    src: "/dipl-cs50.png",
-    alt: "CS50",
-    title: "Harvard’s CS50",
+    src: imacom,
+    alt: "IMACOM",
+    title: "Diplôme d'assistant Marketing",
     metaRight: "Certification",
-    footerLeft: "C / Python / SQL",
+    footerLeft: "Marketing stratégique / Communication & promotion / Vente & relation client / Relations publiques & médias / Analyse de marché & veille / Gestion de projet",
     footerRight: "2025",
     mediaHeight: "h-[300px]",
     hoverColor: "#EFF6FF",
