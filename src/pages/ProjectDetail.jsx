@@ -65,10 +65,10 @@ export default function ProjectDetail() {
       <section className="space-y-3">
         {Array.isArray(project.notes) ? (
           <ul className="list-disc pl-6 space-y-1">
-            {project.notes.map((n, i) => <li key={i}>{n}</li>)}
+            {project.notes.map((n, i) => <dl key={i}>{n}</dl>)}
           </ul>
         ) : project.notes ? (
-          <p>{project.notes}</p>
+          <dd>{project.notes}</dd>
         ) : null}
 
         <div className="flex flex-wrap gap-2">
