@@ -1,10 +1,10 @@
 import entretien from '../assets/entretien_resized.png';
-import breitling from '../assets/macbook_Breitling.png';
+import breitling from '../assets/macbook_breitling.png';
 import lego from '../assets/macbook_lego_resized.png';
 import wordle from '../assets/wordle_iphone_resized.png';
-import aeroDark from '../assets/dark_Aero.png';
-import aeroLight from '../assets/light_Aero.png';
-import aeroIpad from '../assets/Aero_Ipad.png'
+import aeroDark from '../assets/dark_aero.png';
+import aeroLight from '../assets/light_aero.png';
+import aeroIpad from '../assets/aero_ipad.png'
 import aeroLastPage from '../assets/aero.png'
 
 export const projects = [
