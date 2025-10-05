@@ -1,12 +1,15 @@
-// src/pages/About.jsx
+
 import portrait from "../assets/golf.jpg";
 import malaga from "../assets/malaga.jpg";
 import legend from "../assets/victor_legend.jpg";
 import velodrome from "../assets/velodrome.mp4";
 import imacom from "../assets/imacom.png";
-import im from '../assets/im.svg';
+import im from "../assets/im.svg";
+import eracom from '../assets/eracom.png'
+import helimap from '../assets/helimap.png'
+import coop from '../assets/coop.svg'
+import logo from '../assets/logo.svg'
 
-/* ---------- Composants réutilisables ---------- */
 function Section({ intro, children }) {
   return (
     <section className="space-y-6">
@@ -37,7 +40,9 @@ function CardsGrid({ cards }) {
               </div>
 
               {/* Bloc média : coins arrondis + clipping, média non étiré */}
-              <div className={`flex w-full items-center justify-center ${mediaH} mt-3`}>
+              <div
+                className={`flex w-full items-center justify-center ${mediaH} mt-3`}
+              >
                 <div className="w-full h-full rounded-2xl overflow-hidden bg-transparent flex items-center justify-center">
                   {c.type === "image" && (
                     <img
@@ -74,9 +79,7 @@ function CardsGrid({ cards }) {
   );
 }
 
-/* ---------- Données DES SECTIONS ---------- */
 
-/* 1) À PROPOS — reprend exactement tes infos */
 const aboutCards = [
   {
     type: "image",
@@ -129,45 +132,45 @@ const aboutCards = [
   },
 ];
 
-/* 2) EXPÉRIENCES PRO — même mise en page (mets tes visuels/logos réels) */
+
 const experiencesCards = [
   {
     type: "image",
-    src: "/exp-breitling.png", // place le fichier dans /public ou importe-le
-    alt: "Breitling Nova League",
-    title: "Breitling — Nova League",
-    metaRight: "Backend",
-    footerLeft: "Laravel, Inertia, PWA",
-    footerRight: "2024–2025",
+    src: helimap, 
+    alt: "Stage de 10 mois, Helimap Sixense",
+    title: "Stage de 10 mois, Helimap Sixense",
+    metaRight: "Acquisition et traitement de données LiDAR",
+    footerLeft: "TerraScan, QGIS, RiSCAN PRO",
+    footerRight: "2019-2020",
     span: "md:col-span-2",
     mediaHeight: "h-[360px]",
     hoverColor: "#EDE9FE",
   },
   {
     type: "image",
-    src: "/exp-internal-tools.png",
-    alt: "Outils internes",
-    title: "Outils internes",
-    metaRight: "Fullstack",
-    footerLeft: "Node, React, SQLite",
-    footerRight: "2024",
+    src: coop,
+    alt: "Picking Coop",
+    title: "Travail étudiant",
+    metaRight: "Picking - préparation de commandes",
+    footerLeft: "Travail étudiant en parallèle de mes études",
+    footerRight: "2023",
     mediaHeight: "h-[360px]",
     hoverColor: "#ECFDF5",
   },
   {
     type: "image",
-    src: "/exp-redesign.png",
-    alt: "Refonte site",
-    title: "Refonte site",
-    metaRight: "UI/UX",
-    footerLeft: "Figma → React",
-    footerRight: "2023",
+    src: logo,
+    alt: "Self employed",
+    title: "Travail à mon compte",
+    metaRight: "Web Programming",
+    footerLeft: "React.js, Vite, Tailwind.CSS, Breeze, Laravel ",
+    footerRight: "2025 -",
     mediaHeight: "h-[360px]",
     hoverColor: "#FFF7ED",
   },
 ];
 
-/* 3) DIPLÔMES / CERTIFICATIONS — même mise en page */
+
 const diplomasCards = [
   {
     type: "image",
@@ -187,25 +190,26 @@ const diplomasCards = [
     alt: "IMACOM",
     title: "Diplôme d'assistant Marketing",
     metaRight: "Certification",
-    footerLeft: "Marketing stratégique / Communication & promotion / Vente & relation client / Relations publiques & médias / Analyse de marché & veille / Gestion de projet",
+    footerLeft:
+      "Marketing stratégique / Communication & promotion / Vente & relation client / Relations publiques & médias / Analyse de marché & veille / Gestion de projet",
     footerRight: "2025",
     mediaHeight: "h-[300px]",
     hoverColor: "#EFF6FF",
   },
   {
     type: "image",
-    src: "/dipl-ga4.png",
-    alt: "Google Analytics",
-    title: "Google Analytics",
-    metaRight: "Certification",
-    footerLeft: "GA4",
-    footerRight: "2024",
+    src: eracom,
+    alt: "ERACOM",
+    title: "ERACOM",
+    metaRight: "Maturité Spécialisée",
+    footerLeft: "Communication and Media Studies",
+    footerRight: "2019",
     mediaHeight: "h-[300px]",
     hoverColor: "#FEF3C7",
   },
 ];
 
-/* ---------- Page ---------- */
+
 export default function About() {
   return (
     <div className="min-h-screen flex flex-col py-8 px-4 space-y-14">
@@ -220,8 +224,7 @@ surtout le backend. En parallèle, je suis un coureur, cycliste et golfeur avide
 
       {/* Expériences professionnelles */}
       <Section
-        intro={`Expériences professionnelles récentes : contributions backend, intégration UI et
-pilotage de petites features fullstack.`}
+        intro={`Aperçu de mes expériences professionnelles récentes : stages de formation, emplois étudiants et projets en freelance.`}
       >
         <CardsGrid cards={experiencesCards} />
       </Section>
