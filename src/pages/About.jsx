@@ -1,10 +1,9 @@
 
-import portrait from "../assets/golf.jpg";
-import malaga from "../assets/malaga.jpg";
-import legend from "../assets/victor_legend.jpg";
-import velodrome from "../assets/velodrome.mp4";
-import imacom from "../assets/imacom.png";
-import im from "../assets/im.svg";
+import portrait from '../assets/golf.jpg';
+import malaga from '../assets/malaga.jpg';
+import velodrome from '../assets/velodrome.mp4';
+import imacom from '../assets/imacom.png';
+import im from '../assets/im.svg';
 import eracom from '../assets/eracom.png'
 import helimap from '../assets/helimap.png'
 import coop from '../assets/coop.svg'
