@@ -9,6 +9,7 @@ import eracom from '../assets/eracom.png'
 import helimap from '../assets/helimap.png'
 import coop from '../assets/coop.svg'
 import logo from '../assets/logo.svg'
+import vitra from '../assets/vitra.jpg'
 
 function Section({ intro, children }) {
   return (
@@ -97,7 +98,7 @@ const aboutCards = [
     type: "image",
     src: malaga,
     alt: "Photographie urbaine",
-    title: "Urban photography",
+    title: "Photographie urbaine",
     metaRight: "Hobbys",
     footerLeft: "Málaga",
     footerRight: "Septembre 2024",
@@ -106,12 +107,12 @@ const aboutCards = [
   },
   {
     type: "image",
-    src: legend,
-    alt: "Legend",
-    title: "Victor",
-    metaRight: "Fun",
-    footerLeft: "",
-    footerRight: "",
+    src: vitra,
+    alt: "Design",
+    title: "Passionné de design",
+    metaRight: "Culture",
+    footerLeft: "VitraHaus",
+    footerRight: "Mai 2024",
     mediaHeight: "h-[420px]",
     hoverColor: "#DCD5C5",
   },
@@ -144,7 +145,7 @@ const experiencesCards = [
     footerRight: "2019-2020",
     span: "md:col-span-2",
     mediaHeight: "h-[360px]",
-    hoverColor: "#EDE9FE",
+    hoverColor: "#B8B997",
   },
   {
     type: "image",
@@ -155,7 +156,7 @@ const experiencesCards = [
     footerLeft: "Travail étudiant en parallèle de mes études",
     footerRight: "2023",
     mediaHeight: "h-[360px]",
-    hoverColor: "#ECFDF5",
+    hoverColor: "#CBB8A9",
   },
   {
     type: "image",
@@ -166,7 +167,7 @@ const experiencesCards = [
     footerLeft: "React.js, Vite, Tailwind.CSS, Breeze, Laravel ",
     footerRight: "2025 -",
     mediaHeight: "h-[360px]",
-    hoverColor: "#FFF7ED",
+    hoverColor: "#423B35",
   },
 ];
 
@@ -182,7 +183,7 @@ const diplomasCards = [
     footerRight: "2023–2026",
     span: "md:col-span-2",
     mediaHeight: "h-[300px]",
-    hoverColor: "#EEF2FF",
+    hoverColor: "#DCD5C5",
   },
   {
     type: "image",
@@ -194,7 +195,7 @@ const diplomasCards = [
       "Marketing stratégique / Communication & promotion / Vente & relation client / Relations publiques & médias / Analyse de marché & veille / Gestion de projet",
     footerRight: "2025",
     mediaHeight: "h-[300px]",
-    hoverColor: "#EFF6FF",
+    hoverColor: "#CBB8A9",
   },
   {
     type: "image",
@@ -205,7 +206,7 @@ const diplomasCards = [
     footerLeft: "Communication and Media Studies",
     footerRight: "2019",
     mediaHeight: "h-[300px]",
-    hoverColor: "#FEF3C7",
+    hoverColor: "#423B35",
   },
 ];
 

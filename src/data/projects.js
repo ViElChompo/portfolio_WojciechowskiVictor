@@ -12,7 +12,7 @@ export const projects = [
     id: "lego-story",
     title: "Lego Story",
     year: "2025",
-    category: "Dataviz • Design Minimaliste",
+    category: "Dataviz • Frontend",
     type: "screenshot",
     image: lego,
     techStack: ["HTML5", "CSS3", "JavaScript", "Vite", "D3.js"],
