@@ -100,10 +100,7 @@ function FlipCard({ card }) {
                 <span className="truncate">{card.footerLeft}</span>
                 <span className="flex items-center gap-1">
                   {card.footerRight}
-                  {/* 💬 Indice d’interaction, au-dessus de la date */}
-                  <span className="text-gray-300 text-[11px] translate-y-[1px] group-hover:rotate-180 transition-transform duration-500">
-                    ↻
-                  </span>
+                  
                 </span>
               </div>
             </div>
