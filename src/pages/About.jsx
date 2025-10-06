@@ -296,7 +296,7 @@ const diplomasCards = [
     title: "IMACOM",
     metaRight: "Diplôme d'assistant Marketing",
     footerLeft:
-      "Marketing stratégique / Communication & promotion / Vente & relation client / Relations publiques & médias / Analyse de marché & veille / Gestion de projet",
+      "Marketing stratégique",
     footerRight: "2023",
     mediaHeight: "h-[300px]",
     flippable: true,
