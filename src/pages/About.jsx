@@ -1,5 +1,6 @@
 import { useState } from "react";
 import portrait from "../assets/golf.jpg";
+import { Link } from "react-router-dom";
 import malaga from "../assets/malaga.jpg";
 import velodrome from "../assets/velodrome.mp4";
 import imacom from "../assets/imacom.png";
@@ -318,18 +319,22 @@ const diplomasCards = [
 export default function About() {
   return (
     <div className="min-h-screen flex flex-col py-8 px-4 space-y-14">
-      {/* Introduction personnelle — version compacte et cohérente */}
+      
       <section className="mx-auto w-full max-w-5xl">
         <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
-          <div className="grid gap-6 md:grid-cols-3">
+          <div className="grid gap-6 md:grid-cols-5">
+            
             {/* Colonne gauche : titre + sous-titre discrets */}
-            <div className="space-y-1">
-              <h1 className="text-2xl font-semibold tracking-tight">
+            <div className="md:col-span-2 flex flex-col items-center justify-center space-y-6 text-center py-4">
+
+              <h1 className="text-2xl font-semibold tracking-tight justify-center">
                 Victor Wojciechowski
               </h1>
+              <img src= {logo} className="h-[220px]" ></img>
               <p className="text-sm text-gray-500">
                 Étudiant en dernière année d'ingénierie des médias · HEIG-VD
               </p>
+
               {/* Icônes sociales */}
               <div className="flex items-center gap-4 pt-1">
                 {/* GitHub */}
@@ -374,8 +379,8 @@ export default function About() {
               </div>
             </div>
 
-            {/* Colonne droite : description courte + méta en chips */}
-            <div className="md:col-span-2 space-y-4">
+            {/* Colonne centrale : description courte + méta */}
+            <div className="md:col-span-2 flex flex-col justify-center space-y-4">
               <p className="text-[15px] leading-relaxed text-gray-600">
                 Je conçois des expériences web claires et performantes, à
                 l’intersection du design, du code et de la donnée. Intérêt pour
@@ -383,7 +388,7 @@ export default function About() {
                 recherche d’un
                 <span className="font-medium"> projet de Bachelor</span> en{" "}
                 <span className="font-medium">développement web</span> /{" "}
-                <span className="font-medium"> dévloppement backend</span>, avec
+                <span className="font-medium">développement backend</span>, avec
                 un attrait pour la{" "}
                 <span className="font-medium">
                   valorisation du patrimoine horloger
@@ -399,13 +404,23 @@ export default function About() {
                   className="rounded-full border border-gray-200 px-2.5 py-1 text-xs text-grey-600 hover:shadow-2xl hover:-translate-y-1
           transition-all duration-300"
                 >
-                  <button>
-                    <a href="mailto:victorwoj6@gmail.com">
-                      M'envoyer un e-mail
-                    </a>
-                  </button>
+                  <a href="mailto:victorwoj6@gmail.com">
+                    M'envoyer un e-mail
+                  </a>
                 </span>
               </div>
+            </div>
+
+            {/* Colonne droite : lien vers projets */}
+            <div className="flex items-center justify-center">
+              <Link
+                to="/about"
+                className="group block w-full max-w-xs rounded-xl border border-gray-200 bg-gray-50 p-3 text-center shadow-sm hover:shadow-md hover:bg-white transition-all duration-300"
+              >
+                <h3 className="text-lg font-semibold text-gray-800 mb-1 group-hover:text-black transition">
+                  Mes projets →
+                </h3>
+              </Link>
             </div>
           </div>
         </div>
@@ -420,6 +435,7 @@ export default function About() {
       <Section intro={`Formations`}>
         <CardsGrid cards={diplomasCards} />
       </Section>
+
       {/* Présentation perso */}
       <Section intro={`Hobbys et passions.`}>
         <CardsGrid cards={aboutCards} />
