@@ -69,7 +69,9 @@ function FlipCard({ card }) {
                 <span>{card.metaRight}</span>
               </div>
 
-              <div className={`flex w-full items-center justify-center ${mediaH} mt-3`}>
+              <div
+                className={`flex w-full items-center justify-center ${mediaH} mt-3`}
+              >
                 <div className="w-full h-full rounded-2xl overflow-hidden flex items-center justify-center">
                   {card.type === "image" && (
                     <img
@@ -109,7 +111,10 @@ function FlipCard({ card }) {
             {/* FACE ARRIÈRE */}
             <div
               className="absolute inset-0 rounded-2xl p-6 flex flex-col items-start justify-center text-sm leading-relaxed bg-gray-900 text-white"
-              style={{ transform: "rotateY(180deg)", backfaceVisibility: "hidden" }}
+              style={{
+                transform: "rotateY(180deg)",
+                backfaceVisibility: "hidden",
+              }}
             >
               <p className="text-xs uppercase tracking-wide text-gray-300 mb-2">
                 {card.metaRight}
@@ -328,6 +333,48 @@ export default function About() {
               <p className="text-sm text-gray-500">
                 Étudiant en dernière année d'ingénierie des médias · HEIG-VD
               </p>
+              {/* Icônes sociales */}
+              <div className="flex items-center gap-4 pt-1">
+                {/* GitHub */}
+                <a
+                  href="https://github.com/ViElChompo"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-gray-400 hover:text-gray-700 transition-colors"
+                  aria-label="GitHub"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    className="w-5 h-5"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M12 .297a12 12 0 0 0-3.793 23.406c.6.111.82-.258.82-.577v-2.234c-3.338.726-4.033-1.61-4.033-1.61-.547-1.387-1.336-1.757-1.336-1.757-1.092-.75.083-.735.083-.735 1.207.084 1.841 1.238 1.841 1.238 1.073 1.84 2.809 1.308 3.492 1.001.108-.778.42-1.308.762-1.61-2.665-.303-5.466-1.332-5.466-5.931 0-1.31.469-2.381 1.238-3.221-.124-.303-.537-1.524.117-3.176 0 0 1.008-.322 3.301 1.23a11.5 11.5 0 0 1 6.003 0c2.292-1.552 3.298-1.23 3.298-1.23.656 1.652.243 2.873.12 3.176.772.84 1.237 1.911 1.237 3.221 0 4.61-2.805 5.625-5.476 5.921.43.372.823 1.102.823 2.222v3.293c0 .321.218.694.825.576A12.003 12.003 0 0 0 12 .297Z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </a>
+
+                {/* LinkedIn */}
+                <a
+                  href="www.linkedin.com/in/victor-wojciechowski-552b76303"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-gray-400 hover:text-gray-700 transition-colors"
+                  aria-label="LinkedIn"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    className="w-5 h-5"
+                  >
+                    <path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.29c-.97 0-1.75-.79-1.75-1.76s.78-1.76 1.75-1.76 1.75.79 1.75 1.76-.78 1.76-1.75 1.76zm13.5 11.29h-3v-5.6c0-1.34-.03-3.07-1.87-3.07-1.87 0-2.16 1.46-2.16 2.97v5.7h-3v-10h2.88v1.37h.04c.4-.75 1.38-1.54 2.84-1.54 3.04 0 3.6 2 3.6 4.59v5.58z" />
+                  </svg>
+                </a>
+              </div>
             </div>
 
             {/* Colonne droite : description courte + méta en chips */}
@@ -351,8 +398,10 @@ export default function About() {
                 <span className="rounded-full border border-gray-100 px-2.5 py-1 text-xs text-gray-600">
                   Morges (VD), Suisse
                 </span>
-                <span className="rounded-full border border-gray-200 px-2.5 py-1 text-xs text-grey-600 hover:shadow-2xl hover:-translate-y-1
-          transition-all duration-300">
+                <span
+                  className="rounded-full border border-gray-200 px-2.5 py-1 text-xs text-grey-600 hover:shadow-2xl hover:-translate-y-1
+          transition-all duration-300"
+                >
                   <button>
                     <a href="mailto:victorwoj6@gmail.com">
                       M'envoyer un e-mail
@@ -366,16 +415,12 @@ export default function About() {
       </section>
 
       {/* Expériences professionnelles */}
-      <Section
-        intro={`Expériences professionnelles récentes`}
-      >
+      <Section intro={`Expériences professionnelles récentes`}>
         <CardsGrid cards={experiencesCards} />
       </Section>
 
       {/* Diplômes & certifications */}
-      <Section
-        intro={`Formations`}
-      >
+      <Section intro={`Formations`}>
         <CardsGrid cards={diplomasCards} />
       </Section>
       {/* Présentation perso */}
