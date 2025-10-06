@@ -359,7 +359,7 @@ export default function About() {
 
                 {/* LinkedIn */}
                 <a
-                  href="www.linkedin.com/in/victor-wojciechowski-552b76303"
+                  href="https://linkedin.com/in/victor-wojciechowski-552b76303"
                   target="_blank"
                   rel="noreferrer"
                   className="text-gray-400 hover:text-gray-700 transition-colors"
