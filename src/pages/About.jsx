@@ -44,8 +44,6 @@ function FlipCard({ card }) {
   // === CARTE FLIPPABLE ===
   if (isFlippable) {
     return (
-      // 💬 Changement ICI : on met l’ombre et le “lift” sur l’ARTICLE (le conteneur externe),
-      // pas sur les faces internes, sinon l’effet est invisible.
       <article
         className={`group relative ${span} min-h-[500px] cursor-pointer
           rounded-2xl bg-white ring-1 ring-gray-200
@@ -350,10 +348,11 @@ export default function About() {
               </p>
 
               <div className="flex flex-wrap items-center gap-2">
-                <span className="rounded-full border border-gray-200 px-2.5 py-1 text-xs text-gray-600">
+                <span className="rounded-full border border-gray-100 px-2.5 py-1 text-xs text-gray-600">
                   Morges (VD), Suisse
                 </span>
-                <span className="rounded-full border border-gray-200 px-2.5 py-1 text-xs text-gray-600">
+                <span className="rounded-full border border-gray-200 px-2.5 py-1 text-xs text-grey-600 hover:shadow-2xl hover:-translate-y-1
+          transition-all duration-300">
                   <button>
                     <a href="mailto:victorwoj6@gmail.com">
                       M'envoyer un e-mail
