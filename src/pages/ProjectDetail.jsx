@@ -1,15 +1,24 @@
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import { projects } from "../data/projects";
 
 export default function ProjectDetail() {
   const { id } = useParams();
   const project = projects.find((p) => p.id === id);
+  const navigate = useNavigate();
+
+  const goBack = (e) => {
+    e.preventDefault();      // on empêche la navigation vers "#"
+    navigate(-1);            // on revient à la page précédente
+  };
 
   if (!project) {
     return (
       <div className="py-10">
         <p>Projet introuvable.</p>
-        <Link to="/" className="underline">← Retour</Link>
+        <Link to="#" onClick={goBack} className="underline">
+          ← Retour
+        </Link>
+        
       </div>
     );
   }
@@ -18,7 +27,8 @@ export default function ProjectDetail() {
     <article className="space-y-6">
       <header className="space-y-2">
         <Link
-          to="/"
+          to="#"
+          onClick={goBack}
           className="inline-flex items-center gap-2 rounded-full border border-gray-200 px-3 py-1 text-sm hover:bg-gray-50"
         >
           ← Retour
