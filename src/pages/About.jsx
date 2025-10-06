@@ -41,40 +41,44 @@ function FlipCard({ card }) {
     if (isFlippable) setFlipped(!flipped);
   };
 
-  // --- CARTE FLIPPABLE ---
+  // === CARTE FLIPPABLE ===
   if (isFlippable) {
     return (
+      // 💬 Changement ICI : on met l’ombre et le “lift” sur l’ARTICLE (le conteneur externe),
+      // pas sur les faces internes, sinon l’effet est invisible.
       <article
-        className={`group relative ${span} min-h-[500px] cursor-pointer`}
-        onClick={toggleFlip} // 👈 flip au clic / tap mobile
+        className={`group relative ${span} min-h-[500px] cursor-pointer
+          rounded-2xl bg-white ring-1 ring-gray-200
+          shadow-md hover:shadow-2xl hover:-translate-y-1
+          transition-all duration-300`}
+        onClick={toggleFlip}
       >
+        {/* 💬 Le wrapper perspective reste, mais ne porte PAS les ombres */}
         <div className="h-full w-full [perspective:1000px]">
           <div
-            className={`relative h-full w-full rounded-2xl ring-1 ring-gray-200 shadow-lg bg-white transition-transform duration-500 [transform-style:preserve-3d] ${
-              flipped ? "[transform:rotateY(180deg)]" : ""
-            }`}
+            className={`relative h-full w-full rounded-2xl
+              transition-transform duration-500
+              [transform-style:preserve-3d]
+              ${flipped ? "[transform:rotateY(180deg)]" : ""}`}
           >
             {/* FACE AVANT */}
             <div
               className="absolute inset-0 flex flex-col p-4 justify-between"
               style={{ backfaceVisibility: "hidden" }}
             >
-              {/* Méta haut */}
               <div className="flex items-center justify-between text-xs text-gray-400">
                 <span className="truncate">{card.title}</span>
                 <span>{card.metaRight}</span>
               </div>
 
-              {/* Média */}
-              <div
-                className={`flex w-full items-center justify-center ${mediaH} mt-3`}
-              >
+              <div className={`flex w-full items-center justify-center ${mediaH} mt-3`}>
                 <div className="w-full h-full rounded-2xl overflow-hidden flex items-center justify-center">
                   {card.type === "image" && (
                     <img
                       src={card.src}
                       alt={card.alt || ""}
-                      className="h-full w-full object-contain"
+                      // 💬 Petit zoom visuel au hover pour renforcer l’interactivité
+                      className="h-full w-full object-contain transition-transform duration-500 group-hover:scale-105"
                       loading="lazy"
                     />
                   )}
@@ -92,20 +96,22 @@ function FlipCard({ card }) {
                 </div>
               </div>
 
-              {/* Méta bas */}
               <div className="flex items-center justify-between text-xs text-gray-400 mt-3">
                 <span className="truncate">{card.footerLeft}</span>
-                <span>{card.footerRight}</span>
+                <span className="flex items-center gap-1">
+                  {card.footerRight}
+                  {/* 💬 Indice d’interaction, au-dessus de la date */}
+                  <span className="text-gray-300 text-[11px] translate-y-[1px] group-hover:rotate-180 transition-transform duration-500">
+                    ↻
+                  </span>
+                </span>
               </div>
             </div>
 
             {/* FACE ARRIÈRE */}
             <div
               className="absolute inset-0 rounded-2xl p-6 flex flex-col items-start justify-center text-sm leading-relaxed bg-gray-900 text-white"
-              style={{
-                transform: "rotateY(180deg)",
-                backfaceVisibility: "hidden",
-              }}
+              style={{ transform: "rotateY(180deg)", backfaceVisibility: "hidden" }}
             >
               <p className="text-xs uppercase tracking-wide text-gray-300 mb-2">
                 {card.metaRight}
@@ -335,8 +341,8 @@ export default function About() {
                 recherche d’un
                 <span className="font-medium"> projet de Bachelor</span> en{" "}
                 <span className="font-medium">développement web</span> /{" "}
-                <span className="font-medium"> dévloppement backend</span>, avec un attrait pour
-                la{" "}
+                <span className="font-medium"> dévloppement backend</span>, avec
+                un attrait pour la{" "}
                 <span className="font-medium">
                   valorisation du patrimoine horloger
                 </span>
@@ -349,7 +355,9 @@ export default function About() {
                 </span>
                 <span className="rounded-full border border-gray-200 px-2.5 py-1 text-xs text-gray-600">
                   <button>
-                    <a href="mailto:victorwoj6@gmail.com">M'envoyer un e-mail</a>
+                    <a href="mailto:victorwoj6@gmail.com">
+                      M'envoyer un e-mail
+                    </a>
                   </button>
                 </span>
               </div>
@@ -360,19 +368,19 @@ export default function About() {
 
       {/* Expériences professionnelles */}
       <Section
-        intro={`Expériences professionnelles récentes : stages de formation, emplois étudiants et projets en freelance.`}
+        intro={`Expériences professionnelles récentes`}
       >
         <CardsGrid cards={experiencesCards} />
       </Section>
 
       {/* Diplômes & certifications */}
       <Section
-        intro={`Parcours académique et certifications qui structurent ma pratique technique.`}
+        intro={`Formations`}
       >
         <CardsGrid cards={diplomasCards} />
       </Section>
       {/* Présentation perso */}
-      <Section intro={`En voici un peu plus sur mes hobbys et passions.`}>
+      <Section intro={`Hobbys et passions.`}>
         <CardsGrid cards={aboutCards} />
       </Section>
     </div>
