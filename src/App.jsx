@@ -24,7 +24,7 @@ export default function App() {
                 }`
               }
             >
-              About
+              Projects
             </NavLink>
           </nav>
         </div>

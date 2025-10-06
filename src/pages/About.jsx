@@ -1,14 +1,13 @@
-
-import portrait from '../assets/golf.jpg';
-import malaga from '../assets/malaga.jpg';
-import velodrome from '../assets/velodrome.mp4';
-import imacom from '../assets/imacom.png';
-import im from '../assets/im.svg';
-import eracom from '../assets/eracom.png'
-import helimap from '../assets/helimap.png'
-import coop from '../assets/coop.svg'
-import logo from '../assets/logo.svg'
-import vitra from '../assets/vitra.jpg'
+import portrait from "../assets/golf.jpg";
+import malaga from "../assets/malaga.jpg";
+import velodrome from "../assets/velodrome.mp4";
+import imacom from "../assets/imacom.png";
+import im from "../assets/im.svg";
+import eracom from "../assets/eracom.png";
+import helimap from "../assets/helimap.png";
+import coop from "../assets/coop.svg";
+import logo from "../assets/logo.svg";
+import vitra from "../assets/vitra.jpg";
 
 function Section({ intro, children }) {
   return (
@@ -78,7 +77,42 @@ function CardsGrid({ cards }) {
     </div>
   );
 }
-
+const experiencesCards = [
+  {
+    type: "image",
+    src: helimap,
+    alt: "Stage de 10 mois, Helimap Sixense",
+    title: "Stage de 10 mois, Helimap Sixense",
+    metaRight: "Acquisition et traitement de données LiDAR",
+    footerLeft: "TerraScan, QGIS, RiSCAN PRO",
+    footerRight: "2019-2020",
+    span: "md:col-span-2",
+    mediaHeight: "h-[360px]",
+    hoverColor: "#B8B997",
+  },
+  {
+    type: "image",
+    src: coop,
+    alt: "Picking Coop",
+    title: "Travail étudiant",
+    metaRight: "Picking - préparation de commandes",
+    footerLeft: "En parallèle de mes études",
+    footerRight: "2023",
+    mediaHeight: "h-[360px]",
+    hoverColor: "#CBB8A9",
+  },
+  {
+    type: "image",
+    src: logo,
+    alt: "Self employed",
+    title: "Travail à mon compte",
+    metaRight: "Web Programming",
+    footerLeft: "React.js, Vite, Tailwind.CSS, Breeze, Laravel ",
+    footerRight: "2025 -",
+    mediaHeight: "h-[360px]",
+    hoverColor: "#423B35",
+  },
+];
 
 const aboutCards = [
   {
@@ -132,45 +166,6 @@ const aboutCards = [
   },
 ];
 
-
-const experiencesCards = [
-  {
-    type: "image",
-    src: helimap, 
-    alt: "Stage de 10 mois, Helimap Sixense",
-    title: "Stage de 10 mois, Helimap Sixense",
-    metaRight: "Acquisition et traitement de données LiDAR",
-    footerLeft: "TerraScan, QGIS, RiSCAN PRO",
-    footerRight: "2019-2020",
-    span: "md:col-span-2",
-    mediaHeight: "h-[360px]",
-    hoverColor: "#B8B997",
-  },
-  {
-    type: "image",
-    src: coop,
-    alt: "Picking Coop",
-    title: "Travail étudiant",
-    metaRight: "Picking - préparation de commandes",
-    footerLeft: "Travail étudiant en parallèle de mes études",
-    footerRight: "2023",
-    mediaHeight: "h-[360px]",
-    hoverColor: "#CBB8A9",
-  },
-  {
-    type: "image",
-    src: logo,
-    alt: "Self employed",
-    title: "Travail à mon compte",
-    metaRight: "Web Programming",
-    footerLeft: "React.js, Vite, Tailwind.CSS, Breeze, Laravel ",
-    footerRight: "2025 -",
-    mediaHeight: "h-[360px]",
-    hoverColor: "#423B35",
-  },
-];
-
-
 const diplomasCards = [
   {
     type: "image",
@@ -188,8 +183,8 @@ const diplomasCards = [
     type: "image",
     src: imacom,
     alt: "IMACOM",
-    title: "Diplôme d'assistant Marketing",
-    metaRight: "Certification",
+    title: "IMACOM",
+    metaRight: "Diplôme d'assistant Marketing",
     footerLeft:
       "Marketing stratégique / Communication & promotion / Vente & relation client / Relations publiques & médias / Analyse de marché & veille / Gestion de projet",
     footerRight: "2025",
@@ -209,22 +204,12 @@ const diplomasCards = [
   },
 ];
 
-
 export default function About() {
   return (
     <div className="min-h-screen flex flex-col py-8 px-4 space-y-14">
-      {/* Présentation perso */}
-      <Section
-        intro={`Bonjour, je m'appelle Victor Wojciechowski. Je suis étudiant en dernière année
-d’ingénierie des médias à la HEIG-VD. J’ai découvert la programmation web,
-surtout le backend. En parallèle, je suis un coureur, cycliste et golfeur avide.`}
-      >
-        <CardsGrid cards={aboutCards} />
-      </Section>
-
       {/* Expériences professionnelles */}
       <Section
-        intro={`Aperçu de mes expériences professionnelles récentes : stages de formation, emplois étudiants et projets en freelance.`}
+        intro={`Expériences professionnelles récentes : stages de formation, emplois étudiants et projets en freelance.`}
       >
         <CardsGrid cards={experiencesCards} />
       </Section>
@@ -234,6 +219,14 @@ surtout le backend. En parallèle, je suis un coureur, cycliste et golfeur avide
         intro={`Parcours académique et certifications qui structurent ma pratique technique.`}
       >
         <CardsGrid cards={diplomasCards} />
+      </Section>
+      {/* Présentation perso */}
+      <Section
+        intro={`Je m'appelle Victor Wojciechowski. Je suis étudiant en dernière année
+                d’ingénierie des médias à la HEIG-VD. J’ai découvert la programmation web,
+                surtout le backend. En parallèle, je suis un coureur, cycliste et golfeur avide.`}
+      >
+        <CardsGrid cards={aboutCards} />
       </Section>
     </div>
   );
