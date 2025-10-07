@@ -215,7 +215,8 @@ const experiencesCards = [
     mediaHeight: "h-[360px]",
     flippable: true,
     description:
-      "Travail personnel pour des clients tels que l'entreprise de mon père Wo-Dell Sàrl ou le salon de Coline (salon de coiffure pour lequel je refais le site web actuellement).",
+      "Travail personnel pour des clients tels que l'entreprise de mon père Wo-Dell Sàrl ou le salon de Coline (salon de coiffure pour lequel je refais le site web actuellement). J'apprends continuellement à utiliser les technologies les plus récentes afin de proposer un service rapide et qualitatif.",
+      
   },
 ];
 
