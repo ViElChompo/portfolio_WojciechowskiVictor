@@ -8,6 +8,28 @@ import aeroIpad from "../assets/aero_ipad.png";
 import aeroLastPage from "../assets/aero.png";
 
 export const projects = [
+
+  {
+    id: "breitling-novaleague",
+    title: "Breitling Nova League",
+    year: "2025",
+    category: "Fullstack • PWA",
+    type: "screenshot",
+    image: breitling,
+    techStack: ["Laravel", "Vue.js", "Inertia.js", "Vite", "TailwindCSS"],
+    notes: [
+      "J'ai pu créer le backend de la PWA Breitling Nova League (quiz, scoring, suivi).",
+      "Architecture API, gestion des données utilisateurs, mécaniques de jeu.",
+      "Repo privé (accord avec la direction de la HEIG-VD).",
+      "Accès à la plateforme avec: ",
+      "Login : isabelle.petit@example.com",
+      "Password : password123",
+    ],
+    links: {
+      code: "https://github.com/ProjArtBAMAgency/ProjArtBamAgency.git",
+      demo: "https://www.nova-league.com/",
+    },
+  },
   {
     id: "entretien-piege",
     title: "Entretien Piégé",
@@ -34,6 +56,22 @@ export const projects = [
     },
   },
   {
+    id: "lego-story",
+    title: "Lego Story",
+    year: "2025",
+    category: "Dataviz • Frontend",
+    type: "screenshot",
+    image: lego,
+    techStack: ["HTML5", "CSS3", "JavaScript", "Vite", "D3.js"],
+    notes: [
+      "Projet réalisé en Vanilla JS et à l'aide de librairies comme D3.js.",
+    ],
+    links: {
+      code: "https://github.com/ViElChompo/visualDon-legoStory.git",
+      demo: "https://visualdon-legostory.netlify.app/",
+    },
+  },
+  {
     id: "wordle",
     title: "Wordle App",
     year: "2025",
@@ -50,43 +88,7 @@ export const projects = [
       demo: "https://wwwordlevw.netlify.app/",
     },
   },
-  {
-    id: "breitling-novaleague",
-    title: "Breitling Nova League",
-    year: "2025",
-    category: "Fullstack • PWA",
-    type: "screenshot",
-    image: breitling,
-    techStack: ["Laravel", "Vue.js", "Inertia.js", "Vite", "TailwindCSS"],
-    notes: [
-      "J'ai pu créer le backend de la PWA Breitling Nova League (quiz, scoring, suivi).",
-      "Architecture API, gestion des données utilisateurs, mécaniques de jeu.",
-      "Repo privé (accord avec la direction de la HEIG-VD).",
-      "Accès à la plateforme avec: ",
-      "Login : isabelle.petit@example.com",
-      "Password : password123",
-    ],
-    links: {
-      code: "https://github.com/ProjArtBAMAgency/ProjArtBamAgency.git",
-      demo: "https://www.nova-league.com/",
-    },
-  },
-  {
-    id: "lego-story",
-    title: "Lego Story",
-    year: "2025",
-    category: "Dataviz • Frontend",
-    type: "screenshot",
-    image: lego,
-    techStack: ["HTML5", "CSS3", "JavaScript", "Vite", "D3.js"],
-    notes: [
-      "Projet réalisé en Vanilla JS et à l'aide de librairies comme D3.js.",
-    ],
-    links: {
-      code: "https://github.com/ViElChompo/visualDon-legoStory.git",
-      demo: "https://visualdon-legostory.netlify.app/",
-    },
-  },
+  
   {
     id: "Aero",
     title: "Aero2 website",

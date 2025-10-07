@@ -7,7 +7,7 @@ export default function Projects() {
       <header className="mb-8">
         <h1 className="text-2xl font-semibold">Projets</h1>
         <p className="text-gray-600 mt-1">
-          Quelques réalisations récentes — frontend, fullstack et UX/UI.
+          Quelques réalisations récentes — fullstack, frontend et UX/UI.
         </p>
       </header>
 
