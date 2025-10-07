@@ -18,13 +18,30 @@ export const projects = [
     image: breitling,
     techStack: ["Laravel", "Vue.js", "Inertia.js", "Vite", "TailwindCSS"],
     notes: [
-      "J'ai pu créer le backend de la PWA Breitling Nova League (quiz, scoring, suivi).",
-      "Architecture API, gestion des données utilisateurs, mécaniques de jeu.",
-      "Repo privé (accord avec la direction de la HEIG-VD).",
-      "Accès à la plateforme avec: ",
-      `Login : isabelle.petit@example.com`,
-      `Password : password123`,
-    ],
+      
+  "Projet d’articulation HEIG-VD réalisé pour Breitling par l’équipe BAM! Agency.",
+
+  // 🎯 Contexte et concept
+  "Contexte : Le matériel de formation consulté par les revendeurs multi-marques responsables de la vente des produits Breitling n'étaient consommés que avant la compétition organisée par la marque horlogère.\\nNous avons été mandatés pour créer une plateforme capable d’accueillir cette compétition continue et de permettre aux utilisateurs de réaliser des tests de connaissances et de se mesurer aux autres compétiteurs au travers de tests de connaissances.\\nPour ce faire nous avons imaginé la 'Nova League', une compétition annuelle gamifiée permettant aux revendeurs multimarques de se former tout au long de l’année, et non plus uniquement avant la phase de qualification. ",
+
+
+  // ⚙️ Technique et développement
+  "Tech Stack: ",
+  "Frontend - Vue.js (Composition API) + Inertia.js + TailwindCSS — architecture SPA mobile-first.\\nBackend - Laravel — API REST, migrations, seeders, authentification avec Breeze.\\nDatabase - SQLite (environnement de développement rapide et stable).",
+ 
+
+  // 🧠 Design et gestion de projet
+  "Design & UX : Prototype complet sur Figma, tests utilisateurs, identité visuelle et itérations d’ergonomie.",
+  "Gestion de projet : Méthode agile, planification sur Jira, répartition claire des rôles, réunions journalières et suivi constant.",
+  "Livrables : Plateforme fonctionnelle, documentation technique, rapport complet et présentation finale.",
+
+  // 🔒 Accès et confidentialité
+  "Repo github privé (confidentialité demandée par Breitling).",
+  "Accès à la plateforme avec:",
+  "Login : isabelle.petit@example.com",
+  "Password : password123",
+],
+
     links: {
       code: "https://github.com/ProjArtBAMAgency/ProjArtBamAgency.git",
       demo: "https://www.nova-league.com/",
@@ -53,10 +70,15 @@ export const projects = [
   "✅ Accepté — le profil correspond aux attentes.",
   "⚠️ Refusé — certaines réponses ne remplissent pas les critères.",
   "⛔ Blacklisté — le candidat échoue complètement à l’entretien.",
+
+  "Tech Stack :",
   "Backend : Laravel — API RESTful versionnée, authentification, middleware et gestion des relations Eloquent.",
   "Frontend : Vue.js — navigation dynamique entre chapitres, affichage conditionnel et interface responsive.",
   "Base de données : SQLite.",
-  "Objectif : Démontrer l’intégration d’un backend structuré et d’un frontend réactif dans une expérience interactive cohérente et fonctionnelle.",
+  "Objectif : ",
+  "Démontrer l’intégration d’un backend structuré et d’un frontend réactif dans une expérience interactive cohérente et fonctionnelle.",
+  "Coming Soon : ",
+  "⛏️  Bientôt disponible en ligne.",
 ],
 
     links: {
