@@ -46,10 +46,19 @@ export const projects = [
       "Axios",
     ],
     notes: [
-      "Conception de l’API REST v1 + auth Sanctum",
-      "Seeding + route admin protégée",
-      "Frontend Vue 3 (Composition API) + Pinia",
-    ],
+  "Projet réalisé dans le cadre de deux cours : Développement de produit médias (Framework Laravel) et Web Mobile User Interface (Vue.js).",
+  "Application web complète combinant un backend Laravel et un frontend Vue.js, sous la forme d’une fiction interactive où les choix de l’utilisateur influencent le récit.",
+  "L’utilisateur participe à une simulation d’entretien d’embauche et doit répondre à des questions évaluant son adéquation avec les exigences d’une entreprise.",
+  "Trois issues possibles à la fin de l'entretien :",
+  "✅ Accepté — le profil correspond aux attentes.",
+  "⚠️ Refusé — certaines réponses ne remplissent pas les critères.",
+  "⛔ Blacklisté — le candidat échoue complètement à l’entretien.",
+  "Backend : Laravel — API RESTful versionnée, authentification, middleware et gestion des relations Eloquent.",
+  "Frontend : Vue.js — navigation dynamique entre chapitres, affichage conditionnel et interface responsive.",
+  "Base de données : SQLite.",
+  "Objectif : Démontrer l’intégration d’un backend structuré et d’un frontend réactif dans une expérience interactive cohérente et fonctionnelle.",
+],
+
     links: {
       code: "https://github.com/ViElChompo/Entretien-piege/tree/main",
       demo: "https://github.com/ViElChompo/Entretien-piege/blob/main/technical/technical.md",
