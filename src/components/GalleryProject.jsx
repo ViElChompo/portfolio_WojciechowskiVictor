@@ -5,10 +5,19 @@ export default function GalleryProject({ project }) {
   const [idx, setIdx] = useState(0);
 
   const images = project.images || [];
-  const onOpen = (i) => { setIdx(i); setOpen(true); };
+  const onOpen = (i) => {
+    setIdx(i);
+    setOpen(true);
+  };
   const onClose = () => setOpen(false);
-  const prev = useCallback(() => setIdx((i) => (i - 1 + images.length) % images.length), [images.length]);
-  const next = useCallback(() => setIdx((i) => (i + 1) % images.length), [images.length]);
+  const prev = useCallback(
+    () => setIdx((i) => (i - 1 + images.length) % images.length),
+    [images.length]
+  );
+  const next = useCallback(
+    () => setIdx((i) => (i + 1) % images.length),
+    [images.length]
+  );
 
   // ESC / ← →
   useEffect(() => {
@@ -26,12 +35,16 @@ export default function GalleryProject({ project }) {
     <section className="space-y-6">
       {/* Header */}
       <header className="space-y-2">
-        <h1 className="text-xl font-semibold text-gray-900">{project.title}</h1>
+      
         <div className="flex flex-wrap items-center gap-2 text-sm text-gray-700">
-          <span className="rounded-full border border-gray-200 bg-white px-3 py-1">{project.year}</span>
-          <span className="rounded-full border border-gray-200 bg-white px-3 py-1">{project.category}</span>
+          
           {(project.techStack || []).map((t) => (
-            <span key={t} className="rounded-full border border-gray-200 bg-white px-3 py-1">{t}</span>
+            <span
+              key={t}
+              className="rounded-full border border-gray-200 bg-white px-3 py-1"
+            >
+              {t}
+            </span>
           ))}
         </div>
       </header>
@@ -42,7 +55,11 @@ export default function GalleryProject({ project }) {
           className="overflow-hidden rounded-2xl border border-gray-200 shadow-sm cursor-zoom-in"
           onClick={() => onOpen(0)}
         >
-          <img src={project.cover} alt={project.title} className="w-full h-auto object-cover" />
+          <img
+            src={project.cover}
+            alt={project.title}
+            className="w-full h-auto object-cover"
+          />
         </div>
       )}
 
@@ -51,7 +68,7 @@ export default function GalleryProject({ project }) {
         {images.map((img, i) => (
           <figure
             key={i}
-            className="group overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm"
+            className="group overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm flex flex-col"
           >
             <button
               type="button"
@@ -65,7 +82,7 @@ export default function GalleryProject({ project }) {
               />
             </button>
             {img.alt && (
-              <figcaption className="px-4 py-3 text-sm text-gray-700 border-t border-gray-100 bg-gray-50">
+              <figcaption className="px-4 py-4 text-sm text-gray-700 min-h-[84px] flex items-center justify-center text-center">
                 {img.alt}
               </figcaption>
             )}
@@ -88,13 +105,9 @@ export default function GalleryProject({ project }) {
             <img
               src={images[idx]?.src}
               alt={images[idx]?.alt || project.title}
-              className="w-full h-auto rounded-xl shadow-2xl"
+              className="block w-full h-auto object-cover transition-transform duration-300 group-hover:scale-[1.02]"
             />
-            {images[idx]?.alt && (
-              <div className="mt-3 text-sm text-gray-100/90">
-                {images[idx].alt}
-              </div>
-            )}
+            
 
             {/* Controls */}
             <button
