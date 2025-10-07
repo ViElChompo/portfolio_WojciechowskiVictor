@@ -1,6 +1,7 @@
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { projects } from "../data/projects";
 import ProjectNotes from "../components/ProjectNotes";
+import GalleryProject from "../components/GalleryProject";
 
 export default function ProjectDetail() {
   const { id } = useParams();
@@ -8,8 +9,8 @@ export default function ProjectDetail() {
   const navigate = useNavigate();
 
   const goBack = (e) => {
-    e.preventDefault(); // on empêche la navigation vers "#"
-    navigate(-1); // on revient à la page précédente
+    e.preventDefault();
+    navigate(-1);
   };
 
   if (!project) {
@@ -23,8 +24,12 @@ export default function ProjectDetail() {
     );
   }
 
+  const isGallery = project.type === "gallery";
+  const isScreenshot = project.type === "screenshot";
+
   return (
     <article className="space-y-6">
+      {/* Header (garde-le si ton composant GalleryProject n’affiche PAS son propre header) */}
       <header className="space-y-2">
         <Link
           to="#"
@@ -42,7 +47,7 @@ export default function ProjectDetail() {
       </header>
 
       <section className="space-y-4">
-        {project.type === "screenshot" && (
+        {isScreenshot && (
           <img
             src={project.image}
             alt={project.title}
@@ -51,43 +56,28 @@ export default function ProjectDetail() {
           />
         )}
 
-        {project.type === "gallery" && (
-          <div className="grid gap-4 sm:grid-cols-2">
-            {(project.images || []).map((img) => (
-              <figure key={img.src} className="space-y-2">
-                <img
-                  src={img.src}
-                  alt={img.alt || ""}
-                  className="w-full rounded-lg shadow"
-                  loading="lazy"
-                />
-                {img.alt && (
-                  <figcaption className="text-sm text-gray-500">
-                    {img.alt}
-                  </figcaption>
-                )}
-              </figure>
-            ))}
-          </div>
+        {isGallery && (
+          // ❌ Ne pas mettre "return" dans du JSX
+          // ❌ Ne pas wrapper dans une grille si GalleryProject gère déjà sa mise en page
+          <GalleryProject project={project} />
         )}
       </section>
 
+      {/* Tech stack pills */}
       <div className="flex flex-wrap gap-2">
         {(project.techStack || []).map((t) => (
           <span
             key={t}
-            className="rounded-full border border-gray-200 px-2 py-0.5 text-s"
+            className="rounded-full border border-gray-200 px-2 py-0.5 text-xs"
           >
             {t}
           </span>
         ))}
       </div>
 
+      {/* Notes + liens */}
       <section className="space-y-4 text-sm leading-relaxed">
-
-
-        <ProjectNotes notes={project.notes} />
-
+        {project.notes && <ProjectNotes notes={project.notes} />}
 
         {(project.links?.code || project.links?.demo) && (
           <div className="flex gap-4 pt-2">
