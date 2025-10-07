@@ -22,8 +22,8 @@ export const projects = [
       "Architecture API, gestion des données utilisateurs, mécaniques de jeu.",
       "Repo privé (accord avec la direction de la HEIG-VD).",
       "Accès à la plateforme avec: ",
-      "Login : isabelle.petit@example.com",
-      "Password : password123",
+      `Login : isabelle.petit@example.com`,
+      `Password : password123`,
     ],
     links: {
       code: "https://github.com/ProjArtBAMAgency/ProjArtBamAgency.git",

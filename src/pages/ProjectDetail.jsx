@@ -1,5 +1,6 @@
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { projects } from "../data/projects";
+import ProjectNotes from "../components/ProjectNotes";
 
 export default function ProjectDetail() {
   const { id } = useParams();
@@ -7,8 +8,8 @@ export default function ProjectDetail() {
   const navigate = useNavigate();
 
   const goBack = (e) => {
-    e.preventDefault();      // on empêche la navigation vers "#"
-    navigate(-1);            // on revient à la page précédente
+    e.preventDefault(); // on empêche la navigation vers "#"
+    navigate(-1); // on revient à la page précédente
   };
 
   if (!project) {
@@ -18,7 +19,6 @@ export default function ProjectDetail() {
         <Link to="#" onClick={goBack} className="underline">
           ← Retour
         </Link>
-        
       </div>
     );
   }
@@ -72,25 +72,22 @@ export default function ProjectDetail() {
         )}
       </section>
 
-      <section className="space-y-3">
-        {Array.isArray(project.notes) ? (
-          <ul className="list-disc pl-6 space-y-1">
-            {project.notes.map((n, i) => <dl key={i}>{n}</dl>)}
-          </ul>
-        ) : project.notes ? (
-          <dd>{project.notes}</dd>
-        ) : null}
+      <div className="flex flex-wrap gap-2">
+        {(project.techStack || []).map((t) => (
+          <span
+            key={t}
+            className="rounded-full border border-gray-200 px-2 py-0.5 text-s"
+          >
+            {t}
+          </span>
+        ))}
+      </div>
 
-        <div className="flex flex-wrap gap-2">
-          {(project.techStack || []).map((t) => (
-            <span
-              key={t}
-              className="rounded-full border border-gray-200 px-2 py-0.5 text-xs"
-            >
-              {t}
-            </span>
-          ))}
-        </div>
+      <section className="space-y-4 text-sm leading-relaxed">
+
+
+        <ProjectNotes notes={project.notes} />
+
 
         {(project.links?.code || project.links?.demo) && (
           <div className="flex gap-4 pt-2">
