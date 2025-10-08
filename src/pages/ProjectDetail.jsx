@@ -3,6 +3,7 @@ import { projects } from "../data/projects";
 import ProjectNotes from "../components/ProjectNotes";
 import GalleryProject from "../components/GalleryProject";
 
+
 export default function ProjectDetail() {
   const { id } = useParams();
   const project = projects.find((p) => p.id === id);
@@ -26,10 +27,10 @@ export default function ProjectDetail() {
 
   const isGallery = project.type === "gallery";
   const isScreenshot = project.type === "screenshot";
+  const isEmbed = project.type === "embed";
 
   return (
     <article className="space-y-6">
-      {/* Header (garde-le si ton composant GalleryProject n’affiche PAS son propre header) */}
       <header className="space-y-2">
         <Link
           to="#"
@@ -55,15 +56,9 @@ export default function ProjectDetail() {
             loading="lazy"
           />
         )}
+        {isGallery && <GalleryProject project={project} />}
+        </section>
 
-        {isGallery && (
-          // ❌ Ne pas mettre "return" dans du JSX
-          // ❌ Ne pas wrapper dans une grille si GalleryProject gère déjà sa mise en page
-          <GalleryProject project={project} />
-        )}
-      </section>
-
-      {/* Tech stack pills */}
       <div className="flex flex-wrap gap-2">
         {(project.techStack || []).map((t) => (
           <span
@@ -75,7 +70,6 @@ export default function ProjectDetail() {
         ))}
       </div>
 
-      {/* Notes + liens */}
       <section className="space-y-4 text-sm leading-relaxed">
         {project.notes && <ProjectNotes notes={project.notes} />}
 

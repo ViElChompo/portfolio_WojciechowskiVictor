@@ -6,6 +6,7 @@ import aeroDark from "../assets/dark_aero.png";
 import aeroLight from "../assets/light_aero.png";
 import aeroIpad from "../assets/aero_ipad.png";
 import aeroLastPage from "../assets/aero.png";
+import stoic from '../assets/stoic_mind.png'
 
 export const projects = [
   {
